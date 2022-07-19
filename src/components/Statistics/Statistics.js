@@ -2,6 +2,12 @@ import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
 export const Statistics = ({ title, stats }) => {
+  function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, 0)}`;
+  }
+
   return (
     <section className={s.statistics}>
       {title && <h2 className={s.title}>{title.toUpperCase()}</h2>}
@@ -32,9 +38,3 @@ Statistics.prototype = {
     })
   ),
 };
-
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
